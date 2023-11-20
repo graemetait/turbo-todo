@@ -35,13 +35,9 @@ class ToDoController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreToDoRequest $request)
     {
-        $validator = Validator::make($request->all(), [
-            'description' => 'required|unique:to_dos,description',
-        ]);
-
-        $todo = ToDo::create($validator->validated());
+        $todo = ToDo::create($request->validated());
 
         if ($request->wantsTurboStream()) {
             return turbo_stream([

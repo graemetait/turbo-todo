@@ -1,6 +1,6 @@
 <form method="post">
     @csrf
-    <input name="description" type="text" @error('description') aria-invalid="true" @enderror>
+    <input name="description" type="text" value="{{ old('description') }}">
 
     @error('description')
         <div class="alert alert-danger" style="color: red">{{ $message }}</div>
