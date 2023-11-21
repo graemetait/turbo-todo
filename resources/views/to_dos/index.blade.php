@@ -3,9 +3,9 @@
         @include('to_dos._form')
     </x-turbo-frame>
 
-    <p id="todo-count">{{ $todosTotal }}</p>
+    @include('to_dos._count')
 
-    <ul id="to_dos">
+    <ul id="to_dos" class="list-group list-group-flush">
         @each('to_dos._to_do', $toDos, 'toDo')
     </ul>
 

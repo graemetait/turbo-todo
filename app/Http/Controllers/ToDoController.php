@@ -45,7 +45,10 @@ class ToDoController extends Controller
                     ->action('update')
                     ->view('to_dos._form'),
                 turbo_stream($todo),
-                turbo_stream()->update('todo-count', Todo::all()->count())
+                turbo_stream()
+                    ->target('todo-count')
+                    ->action('update')
+                    ->view('to_dos._count', ['todosTotal' => Todo::all()->count()])
             ]);
         }
 
@@ -86,7 +89,10 @@ class ToDoController extends Controller
         if ($request->wantsTurboStream()) {
             return turbo_stream([
                 turbo_stream($todo),
-                turbo_stream()->update('todo-count', Todo::all()->count())
+                turbo_stream()
+                    ->target('todo-count')
+                    ->action('update')
+                    ->view('to_dos._count', ['todosTotal' => Todo::all()->count()])
             ]);
         }
 
