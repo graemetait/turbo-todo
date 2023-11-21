@@ -6,7 +6,6 @@ use App\Http\Requests\StoreToDoRequest;
 use App\Http\Requests\UpdateToDoRequest;
 use App\Models\ToDo;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
 
 class ToDoController extends Controller
 {
