@@ -55,22 +55,6 @@ class ToDoController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     */
-    public function show(ToDo $toDo)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(ToDo $toDo)
-    {
-        //
-    }
-
-    /**
      * Update the specified resource in storage.
      */
     public function update(UpdateToDoRequest $request, ToDo $todo)
