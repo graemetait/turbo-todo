@@ -1,5 +1,4 @@
 <form method="post">
-    @csrf
 
     <div class="input-group mb-3">
         <input type="text" class="form-control @error('description') is-invalid @enderror" name="description"
