@@ -73,9 +73,17 @@ class ToDoController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateToDoRequest $request, ToDo $toDo)
+    public function update(UpdateToDoRequest $request, ToDo $todo)
     {
-        //
+        $todo->complete = $request->boolean('complete');
+        $todo->save();
+
+        if ($request->wantsTurboStream()) {
+
+            return turbo_stream($todo);
+        }
+
+        return redirect('/todos');
     }
 
     /**
