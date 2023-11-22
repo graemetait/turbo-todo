@@ -10,4 +10,6 @@
     </ul>
 
     <turbo-echo-stream-source channel="to_dos" type="public" />
+    <x-turbo-stream-from source="general" type="public" />
+
 </x-app-layout>

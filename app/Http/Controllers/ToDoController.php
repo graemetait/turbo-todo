@@ -49,6 +49,7 @@ class ToDoController extends Controller
                     ->target('todo-count')
                     ->action('update')
                     ->view('to_dos._count', ['todosTotal' => Todo::all()->count()])
+                    ->broadcastTo('general', fn ($broadcast) => $broadcast->toOthers())
             ]);
         }
 
@@ -93,6 +94,7 @@ class ToDoController extends Controller
                     ->target('todo-count')
                     ->action('update')
                     ->view('to_dos._count', ['todosTotal' => Todo::all()->count()])
+                    ->broadcastTo('general', fn ($broadcast) => $broadcast->toOthers())
             ]);
         }
 
