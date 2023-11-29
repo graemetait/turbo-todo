@@ -16,16 +16,8 @@ class ToDo extends Model
 
     public $fillable = ['description'];
 
-    protected function brodcastDefaultStreamables(bool $inserting = false)
+    public function broadcastsTo()
     {
-        if ($inserting) {
-            return [
-                new Channel('to_dos')
-            ];
-        }
-
-        return [
-            new Channel('App.Models.ToDo.' . $this->id)
-        ];
+        return new Channel('general');
     }
 }

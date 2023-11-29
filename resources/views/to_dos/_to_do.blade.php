@@ -13,4 +13,3 @@
         <button type="submit" class="btn btn-link">Delete</button>
     </form>
 </li>
-<x-turbo-stream-from :source="$toDo" type="public" />
